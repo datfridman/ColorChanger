@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Sliders methods
+    
     @IBAction func setRedColorSlider() {
         redCounterLabel.text = counterForLabels(slider: redColorSlider)
         setupColorViewWindow()
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - Setup Methods
+    
     private func setupSliders() {
         redColorSlider.minimumTrackTintColor = .red
         redColorSlider.value = 0.40
@@ -64,6 +66,7 @@ class ViewController: UIViewController {
     
     
     // MARK: - Counter and Color functions
+    
     private func setupColorViewWindow() {
         colorViewWindow.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
