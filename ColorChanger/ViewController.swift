@@ -61,6 +61,8 @@ class ViewController: UIViewController {
         blueCounterLabel.text = String(blueColorSlider.value)
     }
     
+    
+    // MARK: - Counter and Color functions
     private func setupColorViewWindow() {
         colorViewWindow.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
