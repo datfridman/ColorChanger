@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorViewWindow.layer.cornerRadius = 10
+        
         setupSliders()
         setupLabels()
         setupColorViewWindow()
