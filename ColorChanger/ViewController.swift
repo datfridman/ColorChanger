@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorViewWindow.layer.cornerRadius = 10
         setupSliders()
         setupLabels()
         setupColorViewWindow()
@@ -27,38 +28,29 @@ class ViewController: UIViewController {
 
     // MARK: - Sliders methods
     @IBAction func setRedColorSlider() {
-        let counter = round(redColorSlider.value * 100) / 100.0
-        redCounterLabel.text = String(counter)
-        colorViewWindow.backgroundColor = UIColor(red: CGFloat(counter), green: CGFloat(greenColorSlider.value), blue: CGFloat(blueColorSlider.value), alpha: 1)
+        redCounterLabel.text = counterForLabels(slider: redColorSlider)
+        setupColorViewWindow()
     }
     
     @IBAction func setGreenColorSlider() {
-        let counter = round(greenColorSlider.value * 100) / 100.0
-        greenCounterLabel.text = String(counter)
-        colorViewWindow.backgroundColor = UIColor(red: CGFloat(redColorSlider.value), green: CGFloat(counter), blue: CGFloat(blueColorSlider.value), alpha: 1)
+        greenCounterLabel.text = counterForLabels(slider: greenColorSlider)
+        setupColorViewWindow()
     }
 
     @IBAction func setBlueColorSlider() {
-        let counter = round(blueColorSlider.value * 100) / 100.0
-        blueCounterLabel.text = String(counter)
-        colorViewWindow.backgroundColor = UIColor(red: CGFloat(redColorSlider.value), green: CGFloat(greenColorSlider.value), blue: CGFloat(counter), alpha: 1)
+        blueCounterLabel.text = counterForLabels(slider: blueColorSlider)
+        setupColorViewWindow() 
     }
     
     
     // MARK: - Setup Methods
     private func setupSliders() {
         redColorSlider.minimumTrackTintColor = .red
-        redColorSlider.minimumValue = 0
-        redColorSlider.maximumValue = 1
         redColorSlider.value = 0.40
         
         greenColorSlider.minimumTrackTintColor = .green
-        greenColorSlider.minimumValue = 0
-        greenColorSlider.maximumValue = 1
         greenColorSlider.value = 0.70
         
-        blueColorSlider.minimumValue = 0
-        blueColorSlider.maximumValue = 1
         blueColorSlider.minimumTrackTintColor = .blue
         blueColorSlider.value = 0.25
     }
@@ -70,8 +62,15 @@ class ViewController: UIViewController {
     }
     
     private func setupColorViewWindow() {
-        colorViewWindow.layer.cornerRadius = 10
-        colorViewWindow.backgroundColor = UIColor(red: CGFloat(redColorSlider.value), green: CGFloat(greenColorSlider.value), blue: CGFloat(blueColorSlider.value), alpha: 1)
+        colorViewWindow.backgroundColor = UIColor(
+            red: CGFloat(redColorSlider.value),
+            green: CGFloat(greenColorSlider.value),
+            blue: CGFloat(blueColorSlider.value),
+            alpha: 1)
+    }
+    
+    private func counterForLabels(slider: UISlider) -> String {
+        String(round(slider.value * 100) / 100.0)
     }
     
 }
