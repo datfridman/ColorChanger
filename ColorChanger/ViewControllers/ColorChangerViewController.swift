@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ColorChangerViewController: UIViewController {
    
     @IBOutlet var colorViewWindow: UIView!
     @IBOutlet var redCounterLabel: UILabel!
@@ -80,3 +80,6 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+
