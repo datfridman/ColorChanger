@@ -10,6 +10,7 @@ import UIKit
 class ColorChangerViewController: UIViewController {
    
     @IBOutlet var colorViewWindow: UIView!
+    
     @IBOutlet var redCounterLabel: UILabel!
     @IBOutlet var greenCounterLabel: UILabel!
     @IBOutlet var blueCounterLabel: UILabel!

@@ -66,13 +66,6 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		CD6DB6D728B4361100388F36 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		CDF43CFC289D0D93001AD566 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +85,6 @@
 		CDF43D07289D0D93001AD566 /* ColorChanger */ = {
 			isa = PBXGroup;
 			children = (
-				CD6DB6D728B4361100388F36 /* Models */,
 				CD6DB6D528B435D500388F36 /* ViewControllers */,
 				CD6DB6D428B435A400388F36 /* Storyboards */,
 				CD6DB6D628B435E500388F36 /* SupportFiles */,
