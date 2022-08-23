@@ -7,27 +7,46 @@
 
 import UIKit
 
+protocol ColorViewControllerDelegate {
+    func setNewColors(red: CGFloat, green: CGFloat, blue: CGFloat)
+}
+
 class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(
-            red: CGFloat(1),
-            green: CGFloat(0),
-            blue: CGFloat(0),
+            red: CGFloat(0.5),
+            green: CGFloat(0.7),
+            blue: CGFloat(0.9),
             alpha: 1)
+      
     }
     
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        
+    }
     
-    
-    /*
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+         guard let colorSetVC = segue.destination as? ColorChangerViewController else { return }
+         guard let backgoundColorValue = self.view.backgroundColor?.cgColor else { return }
+         
+         colorSetVC.backgoundColorValue = backgoundColorValue
+         colorSetVC.delegate = self
      }
-     */
+}
+
+// MARK: - Extensions
+
+extension MainViewController: ColorViewControllerDelegate {
+    func setNewColors(red: CGFloat, green: CGFloat, blue: CGFloat) {
+        self.view.backgroundColor = UIColor(
+            red: red,
+            green: green,
+            blue: blue,
+            alpha: 1)
+    }
     
 }

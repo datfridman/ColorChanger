@@ -99,20 +99,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-dQ-ZsU">
-                                <rect key="frame" x="165" y="449" width="60" height="31.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-Cz-xX6">
+                                <rect key="frame" x="166" y="460" width="58" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAe-Kz-ZM8"/>
+                                    <segue destination="TSB-b6-M5Z" kind="unwind" unwindAction="unwind:" id="SKC-F5-8zT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bo7-Sk-c18" secondAttribute="trailing" constant="16" id="0R6-V9-hPl"/>
                             <constraint firstItem="bo7-Sk-c18" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Gbu-1x-Ldc"/>
-                            <constraint firstItem="YPt-dQ-ZsU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rbk-b0-6An"/>
-                            <constraint firstItem="YPt-dQ-ZsU" firstAttribute="top" secondItem="bo7-Sk-c18" secondAttribute="bottom" constant="65" id="uB6-7J-b0M"/>
+                            <constraint firstItem="MVQ-Cz-xX6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LvB-re-KSQ"/>
+                            <constraint firstItem="MVQ-Cz-xX6" firstAttribute="top" secondItem="bo7-Sk-c18" secondAttribute="bottom" constant="76" id="jVW-8F-T3s"/>
                             <constraint firstItem="bo7-Sk-c18" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uza-B9-Reh"/>
                         </constraints>
                     </view>
@@ -128,6 +132,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="TSB-b6-M5Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="907.69230769230762" y="103.7914691943128"/>
         </scene>

@@ -8,7 +8,7 @@
 import UIKit
 
 class ColorChangerViewController: UIViewController {
-   
+    
     @IBOutlet var colorViewWindow: UIView!
     
     @IBOutlet var redCounterLabel: UILabel!
@@ -19,6 +19,10 @@ class ColorChangerViewController: UIViewController {
     @IBOutlet var greenColorSlider: UISlider!
     @IBOutlet var blueColorSlider: UISlider!
     
+    var delegate: ColorViewControllerDelegate?
+    
+    var backgoundColorValue: CGColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorViewWindow.layer.cornerRadius = 10
@@ -28,6 +32,13 @@ class ColorChangerViewController: UIViewController {
         setupColorViewWindow()
     }
 
+    @IBAction func doneButton() {
+        self.delegate?.setNewColors(
+            red: CGFloat(redColorSlider.value),
+            green: CGFloat(greenColorSlider.value),
+            blue: CGFloat(blueColorSlider.value)
+        )
+    }
     // MARK: - Sliders methods
     
     @IBAction func setRedColorSlider() {
@@ -49,14 +60,19 @@ class ColorChangerViewController: UIViewController {
     // MARK: - Setup Methods
     
     private func setupSliders() {
+        
+        let redColorValue = Float(backgoundColorValue.components?[0] ?? 0)
+        let greenColorValue = Float(backgoundColorValue.components?[1] ?? 0)
+        let blueColorValue = Float(backgoundColorValue.components?[2] ?? 0)
+        
         redColorSlider.minimumTrackTintColor = .red
-        redColorSlider.value = 0.40
+        redColorSlider.value = round(redColorValue * 100) / 100
         
         greenColorSlider.minimumTrackTintColor = .green
-        greenColorSlider.value = 0.70
+        greenColorSlider.value = round(greenColorValue * 100) / 100
         
         blueColorSlider.minimumTrackTintColor = .blue
-        blueColorSlider.value = 0.25
+        blueColorSlider.value = round(blueColorValue * 100) / 100
     }
     
     private func setupLabels() {
