@@ -15,12 +15,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(
-            red: CGFloat(0.5),
-            green: CGFloat(0.7),
-            blue: CGFloat(0.9),
+            red: CGFloat(0.2),
+            green: CGFloat(0.15),
+            blue: CGFloat(0.4),
             alpha: 1)
-      
     }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
@@ -35,6 +35,15 @@ class MainViewController: UIViewController {
          colorSetVC.backgoundColorValue = backgoundColorValue
          colorSetVC.delegate = self
      }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .black
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
 }
 
 // MARK: - Extensions

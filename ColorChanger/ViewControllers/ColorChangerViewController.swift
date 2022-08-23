@@ -20,9 +20,9 @@ class ColorChangerViewController: UIViewController {
     @IBOutlet var blueColorSlider: UISlider!
     
     var delegate: ColorViewControllerDelegate?
-    
     var backgoundColorValue: CGColor!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         colorViewWindow.layer.cornerRadius = 10
@@ -97,6 +97,3 @@ class ColorChangerViewController: UIViewController {
     }
     
 }
-
-
-
